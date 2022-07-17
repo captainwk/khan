@@ -17,7 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import path, include
 
+# image
+from django.conf.urls.static import static
+from django.conf import settings
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('practice/', include('practice.urls')),
-]
+    path('instagram/', include('instagram.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# static - static파일을 서빙할 수 있는 경로를 지정해 주는 것
+# MEDIA_URL의 경로로 들어왔을 때 document_root는 settings.MEDIA_ROOT 에서 취급을 하겠다 라고 명시해주는 것

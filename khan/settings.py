@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'practice'
+    'practice',
+    'instagram'
 ]
 
 MIDDLEWARE = [
@@ -127,3 +128,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# 127.0.0.1:8000/media/ 로 접근하면 manage.py가 존재하는 BASE_DIR의 media폴더에서 꺼내다가 너에게 넘겨주겠어 라는 뜻
+MEDIA_URL = "/media/"
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
